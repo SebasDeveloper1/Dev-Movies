@@ -1,3 +1,4 @@
+import gobalNodes from '../utils/globalsNodes';
 import headerSearch from '../templates/headerSearch';
 import eventEnterInput from '../utils/eventEnterInput';
 import genericSection from '../templates/genericSection';
@@ -6,22 +7,21 @@ import footerMain from '../templates/footerMain';
 // import nodes from '../utils/nodes';
 
 const searchPage = async () => {
-    const header = null || document.getElementById('header');
-    header.innerHTML = await headerSearch();
+    gobalNodes.header.classList.remove('header-container--movie-details');
+    gobalNodes.header.style.background = '';
+    gobalNodes.header.innerHTML = await headerSearch();
 
     await eventEnterInput();
 
-    const mainContent = null || document.getElementById('mainContent');
-    mainContent.innerHTML = await genericSection();
+    gobalNodes.mainContent.innerHTML = await genericSection();
 
     //['#search=', 'busqueda']
     const [_, query] = location.hash.split('=');
-    const headerCategoryTitle = document.querySelector('.header-title--categoryView');
-    headerCategoryTitle.textContent = `Resultados para: ${decodeURI(query)}`;// decodificar nombres con espacios
+    const headerCategoryTitle = document.querySelector('.header-title--search');
+    headerCategoryTitle.textContent = `Resultados para: "${decodeURI(query)}"`;// decodificar nombres con espacios
     await getMoviesBySearch(query);
 
-    const footer = null || document.getElementById('footer');
-    footer.innerHTML = await footerMain();
+    gobalNodes.footer.innerHTML = await footerMain();
 };
 
 export default searchPage;

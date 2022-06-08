@@ -1,0 +1,121 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-light-1: #fbfafb;
+  --color-light-2: #eeeaf2;
+  --color-medium-1: #aa83c8;
+  --color-medium-2: #8b48bf;
+  --color-medium-3: #5c218a;
+  --color-dark-1: #3e0f64;
+  --color-dark-2: #290545;
+
+  --yellow: #eecc75;
+  --green: #cad297;
+  --aqua: #b7eac5;
+  --lightBlue: #a2eee5;
+  --darkBlue: #8ea2ea;
+  --red: #f09d9d;
+
+  --font-family-titles: "Dosis", sans-serif;
+  --font-family-text: "Red Hat Display", sans-serif;
+
+  --font-size-vs: 1.2rem;
+  --font-size-sm: 1.4rem;
+  --font-size-md: 1.6rem;
+  --font-size-lg: 1.8rem;
+  --font-size-lg2: 2.4rem;
+  --font-size-lg3: 3rem;
+  --font-size-xl: 4rem;
+  --font-size-xxl: 5rem;
+  --font-size-xxxl: 6rem;
+
+  --font-weight-title1: 800;
+  --font-weight-title2: 700;
+  --font-weight-text1: 400;
+  --font-weight-text2: 500;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: var(--font-size-md);
+  font-family: var(--font-family-text);
+  font-weight: var(--font-weight-text1);
+  color: var(--color-dark-2);
+  background-color: var(--color-light-1);
+}
+
+body::-webkit-scrollbar {
+  inline-size: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: var(--color-medium-1);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-medium-3);
+  border-radius: 4px;
+}
+
+h1,
+h2 {
+  font-family: var(--font-family-titles);
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-title1);
+}
+
+h2 {
+  font-size: var(--font-size-lg3);
+  font-weight: var(--font-weight-title2);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-text2);
+}
+
+input {
+  padding-inline-start: 16px;
+  font-size: var(--font-size-lg);
+  color: var(--color-medium-2);
+  border: none;
+  outline: none;
+  background-color: var(--color-light-2);
+}
+
+input::placeholder {
+  font-family: var(--font-family-text);
+  color: var(--color-medium-1);
+}
+
+button {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-text1);
+  color: var(--color-light-2);
+  border: none;
+  outline: none;
+  background-color: var(--color-medium-3);
+  cursor: pointer;
+  animation: transform 2s ease-out;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+/* Shared */
+.header-container,
+.main-container,
+.footer-container {
+  inline-size: 100%;
+  margin: 0 auto;
+}

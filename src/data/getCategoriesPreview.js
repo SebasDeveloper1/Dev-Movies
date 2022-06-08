@@ -1,5 +1,4 @@
 import axiosBaseApi from './confAxiosBase';
-// import nodes from './nodes';
 import renderCategories from '../utils/renderCategories';
 
 const API_CATEGORIES = process.env.API_CATEGORIES;

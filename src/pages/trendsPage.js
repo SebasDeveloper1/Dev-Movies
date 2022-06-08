@@ -1,3 +1,4 @@
+import gobalNodes from '../utils/globalsNodes';
 import headerTrends from '../templates//headerTrends';
 import eventEnterInput from '../utils/eventEnterInput';
 import genericSection from '../templates/genericSection';
@@ -6,20 +7,18 @@ import footerMain from '../templates/footerMain';
 // import nodes from '../utils/nodes';
 
 const trendsPage = async () => {
-
-    const header = null || document.getElementById('header');
-    header.innerHTML = await headerTrends();
+    gobalNodes.header.classList.remove('header-container--movie-details');
+    gobalNodes.header.style.background = '';
+    gobalNodes.header.innerHTML = await headerTrends();
     await eventEnterInput();
 
-    const mainContent = null || document.getElementById('mainContent');
-    mainContent.innerHTML = await genericSection();
+    gobalNodes.mainContent.innerHTML = await genericSection();
     await getTrendingMovies();
 
     const headerCategoryTitle = document.querySelector('.header-title--categoryView');
-    headerCategoryTitle.textContent = 'Tendencias';
+    headerCategoryTitle.textContent = '🍿 Tendencias';
 
-    const footer = null || document.getElementById('footer');
-    footer.innerHTML = await footerMain();
+    gobalNodes.footer.innerHTML = await footerMain();
 };
 
 export default trendsPage;

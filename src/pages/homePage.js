@@ -1,3 +1,4 @@
+import gobalNodes from '../utils/globalsNodes';
 import headerHome from '../templates/headerHome';
 import eventEnterInput from '../utils/eventEnterInput';
 import mainContentHome from '../templates/mainContentHome';
@@ -6,20 +7,16 @@ import getCategoriesPreview from '../data/getCategoriesPreview';
 import footerMain from '../templates/footerMain';
 
 const homePage = async () => {
-    const header = null || document.getElementById('header');
-    header.style.background = '';
-    header.classList.remove('header-container--long');
-    header.innerHTML = await headerHome();
+    gobalNodes.header.classList.remove('header-container--movie-details');
+    gobalNodes.header.style.background = '';
+    gobalNodes.header.innerHTML = await headerHome();
     await eventEnterInput();
 
-    const mainContent = null || document.getElementById('mainContent');
-    mainContent.innerHTML = await mainContentHome();
+    gobalNodes.mainContent.innerHTML = await mainContentHome();
     await getTrendingMoviesPreview();
     await getCategoriesPreview();
 
-    const footer = null || document.getElementById('footer');
-    footer.innerHTML = await footerMain();
-
+    gobalNodes.footer.innerHTML = await footerMain();
 };
 
 export default homePage;

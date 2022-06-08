@@ -1,12 +1,17 @@
 const headerTrends = () => {
     const view = /*html*/`
-    <span id="headerArrowBtn" class="header-arrow">&lt;</span>
-    <h1 class="header-title--categoryView">Acción</h1>
+    <div class="header__container-main header__container-main--trends">
+    <span class="header-arrow"><i id="headerArrowBtn" class="fa-solid fa-solid fa-arrow-left"></i></span>
+        <div class="header-titles">
+            <h1 class="header-title--categoryView"></h1>
+            <p class="header__description">Millones de películas, programas de televisión y personas por descubrir. Explora ahora!</p>
+        </div>
 
-    <form id="searchForm" class="header-searchForm">
-        <input id="searchFormInput" type="text" placeholder="Buscar..." />
-        <button id="searchBtn" type="button">🔍</button>
-    </form>
+        <form id="searchForm" class="header-searchForm">
+            <input class="searchForm__input" id="searchFormInput" type="text" placeholder="Buscar..." />
+            <button class="searchForm__btn" id="searchBtn" type="button">Search</button>
+        </form>
+    </div>
     `;
     return view;
 }

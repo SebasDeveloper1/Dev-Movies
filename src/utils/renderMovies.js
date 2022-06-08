@@ -5,22 +5,29 @@ const renderMovies = ({ parentContainer, listResults = {} }) => {
     const moviesList = [];
     listResults.forEach(movie => {
         const movieContainer = document.createElement('div');
-        movieContainer.className = 'movie-container';
+        if (parentContainer.classList.contains('trendingPreview-movieList')) {
+            movieContainer.className = 'movie-container movie-container--home';
+        } else {
+            movieContainer.className = 'movie-container';
+        }
 
         const imageMovie = document.createElement('img');
         imageMovie.className = 'movie-img';
         imageMovie.setAttribute = ('alt', movie.title);
-        imageMovie.src = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
+
+        let posterPathUrl;
+        let posterPath = movie.poster_path;
+        if (posterPath === null) {
+            posterPathUrl = `https://i.postimg.cc/XJN0fqRR/movie-placeholder.png`;
+        } else {
+            posterPathUrl = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
+        }
+        imageMovie.src = posterPathUrl;
 
         movieContainer.appendChild(imageMovie);
 
         movieContainer.setAttribute('data-idmovie', movie.id);
         movieContainer.setAttribute('data-namemovie', movie.title);
-
-        // movieContainer.addEventListener('click', () => {
-        //     location.hash = `#movie=${movie.id}`;
-        // });
-
 
         moviesList.push(movieContainer);
     });

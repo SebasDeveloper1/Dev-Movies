@@ -1,0 +1,21 @@
+.movie-container {
+  inline-size: 100%;
+  min-inline-size: 170px;
+  max-inline-size: 250px;
+  block-size: auto;
+  margin-inline-end: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.movie-container .movie-img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-color: var(--color-medium-3);
+  border-radius: inherit;
+  -webkit-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%);
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%);
+}
+

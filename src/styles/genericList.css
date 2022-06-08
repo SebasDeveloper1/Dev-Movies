@@ -1,0 +1,8 @@
+.genericList-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 170px));
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  margin: 40px auto;
+}

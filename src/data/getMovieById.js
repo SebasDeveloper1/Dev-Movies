@@ -7,22 +7,48 @@ const API_MOVIE_DETAIL = process.env.API_MOVIE_DETAIL;
 const getMovieById = async (idMovie) => {
     const { data: movie } = await axiosBaseApi.get(`${API_MOVIE_DETAIL}${idMovie}`);
 
-    const movieImgUrl = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+    let widthImageMovie;
+    if (window.innerWidth >= 768) {
+        widthImageMovie = 'w780'
+    } else {
+        widthImageMovie = 'w500'
+    }
 
+    let movieBackdropUrl;
+    let backdropPath = movie.backdrop_path;
+    if (backdropPath === null) {
+        movieBackdropUrl = 'https://i.postimg.cc/XJN0fqRR/movie-placeholder.png';
+    } else {
+        movieBackdropUrl = `https://image.tmdb.org/t/p/${widthImageMovie}/${movie.backdrop_path}`;
+    }
     const headerSection = document.getElementById('header');
     headerSection.style.background = `
-    linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.35) 19.27%,
-        rgba(0, 0, 0, 0) 29.17%
-        ),url(${movieImgUrl})`;
+    linear-gradient(180deg, #2905455e 10%, #290545 100%),url(${movieBackdropUrl})`;
 
-    const movieDetailTitle = document.querySelector('.movieDetail-title');
+    let moviePosterUrl;
+    let posterPath = movie.poster_path;
+    if (posterPath === null) {
+        moviePosterUrl = 'https://i.postimg.cc/XJN0fqRR/movie-placeholder.png';
+    } else {
+        moviePosterUrl = `https://image.tmdb.org/t/p/${widthImageMovie}/${movie.poster_path}`;
+    }
+    const moviePoster = document.querySelector('.movie-detail__poster');
+    moviePoster.src = `${moviePosterUrl}`
+
+    const movieDetailTitle = document.querySelector('.movie-detail__title');
     movieDetailTitle.textContent = movie.title;
+
+    let finalScore = movie.vote_average * 10;
+    const progressBarScore = document.querySelector('.score-container');
+    progressBarScore.style.background = `conic-gradient(
+        #5c218a ${finalScore * 3.6}deg, 
+        #aa83c8 ${finalScore * 3.6}deg)`;
+
+    const movieDetailScore = document.querySelector('.movie-detail__score');
+    movieDetailScore.textContent = `${finalScore}`;
+
     const movieDetailDescription = document.querySelector('.movieDetail-description');
     movieDetailDescription.textContent = movie.overview;
-    const movieDetailScore = document.querySelector('.movieDetail-score');
-    movieDetailScore.textContent = movie.vote_average;
 
     const movieDetailCategoriesList = document.querySelector('.categories-list');
     renderCategories({ parentContainer: movieDetailCategoriesList, listResults: movie.genres, });

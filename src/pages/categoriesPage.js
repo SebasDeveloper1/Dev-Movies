@@ -1,16 +1,15 @@
+import gobalNodes from '../utils/globalsNodes';
 import headerCategory from '../templates/headerCategory';
 import genericSection from '../templates/genericSection';
 import getMoviesByCategory from '../data/getCategoryById';
 import footerMain from '../templates/footerMain';
 
 const categoriesPage = async () => {
-    const header = null || document.getElementById('header');
-    header.style.background = '';
-    header.classList.remove('header-container--long');
-    header.innerHTML = await headerCategory();
+    gobalNodes.header.classList.remove('header-container--movie-details');
+    gobalNodes.header.style.background = '';
+    gobalNodes.header.innerHTML = await headerCategory();
 
-    const mainContent = null || document.getElementById('mainContent');
-    mainContent.innerHTML = await genericSection();
+    gobalNodes.mainContent.innerHTML = await genericSection();
 
     const [_, urlInfoCategory] = location.hash.split('=');
     const [categoryId, categoryName] = urlInfoCategory.split('-');
@@ -19,8 +18,7 @@ const categoriesPage = async () => {
     headerCategoryTitle.textContent = decodeURI(categoryName);// decodificar nombres con espacios
     await getMoviesByCategory(categoryId);
 
-    const footer = null || document.getElementById('footer');
-    footer.innerHTML = await footerMain();
+    gobalNodes.footer.innerHTML = await footerMain();
 };
 
 export default categoriesPage;

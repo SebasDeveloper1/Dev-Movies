@@ -1,17 +1,15 @@
-import headerDetailMovie from '../templates/headerDetailMovie';
+import gobalNodes from '../utils/globalsNodes';
+import headerMovieDetail from '../templates/headerMovieDetail';
 import mainContentDetailMovie from '../templates/mainContentDetailMovie';
 import getMovieById from '../data/getMovieById';
 import footerMain from '../templates/footerMain';
 
 const movieDetailsPage = async () => {
     // Header
-    const header = null || document.getElementById('header');
-    header.classList.add('header-container--long');
-    // nodes.headerSection.style.background = '';
-    header.innerHTML = await headerDetailMovie();
+    gobalNodes.header.classList.add('header-container--movie-details');
+    gobalNodes.header.innerHTML = await headerMovieDetail();
 
-    const mainContent = null || document.getElementById('mainContent');
-    mainContent.innerHTML = await mainContentDetailMovie();
+    gobalNodes.mainContent.innerHTML = await mainContentDetailMovie();
 
     //['#search=', 'idMovie']
     const [_, urlInfoMovie] = location.hash.split('=');
@@ -20,8 +18,7 @@ const movieDetailsPage = async () => {
     await getMovieById(movieId);
 
 
-    const footer = null || document.getElementById('footer');
-    footer.innerHTML = await footerMain();
+    gobalNodes.footer.innerHTML = await footerMain();
 
 };
 

@@ -4,8 +4,10 @@ const events = () => {
         switch (e.target.id) {
             case 'searchBtn':
                 const searchFormInput = document.querySelector('#searchFormInput');
-                const valueSearch = searchFormInput.value;
-                location.hash = `#search=${valueSearch.trim()}`;
+                const valueSearch = searchFormInput.value.trim();
+                if (valueSearch.length > 0) {
+                    location.hash = `#search=${valueSearch}`;
+                }
                 break;
             case 'trendingPreviewBtn':
                 location.hash = '#trends'
@@ -22,9 +24,9 @@ const events = () => {
                 break;
         }
 
-        if (e.path[1].classList.contains('movie-container')) {
-            const idSelectedMovie = e.path[1].dataset.idmovie;
-            const nameSelectedMovie = e.path[1].dataset.namemovie;
+        if (e.composedPath()[1].classList.contains('movie-container')) {
+            const idSelectedMovie = e.composedPath()[1].dataset.idmovie;
+            const nameSelectedMovie = e.composedPath()[1].dataset.namemovie;
             location.hash = `#movie=${idSelectedMovie}-${nameSelectedMovie}`;
 
         } else if (e.target.classList.contains('category-title')) {

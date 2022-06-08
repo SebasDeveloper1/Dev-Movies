@@ -1,0 +1,75 @@
+/* Header  home*/
+.header-container {
+  inline-size: 100%;
+  padding: 24px 0;
+  background-image: linear-gradient(
+    to right bottom,
+    #2a0646,
+    #2f084d,
+    #340a55,
+    #390d5c,
+    #3e0f64
+  );
+}
+
+.header__container-main {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  place-items: center;
+  gap: 32px;
+  inline-size: 90%;
+  margin: 0 auto;
+}
+
+.header__logo-container {
+  grid-row: 1;
+  inline-size: 190px;
+  block-size: auto;
+}
+
+.header__logo-img {
+  inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.header-titles {
+  grid-row: 2;
+  inline-size: 100%;
+  text-align: center;
+}
+
+.header__title {
+  color: var(--color-light-1);
+  margin-bottom: 12px;
+}
+
+.header__description {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-text1);
+  color: var(--color-light-2);
+}
+
+.header-searchForm {
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 100%;
+  max-inline-size: 600px;
+  block-size: auto;
+}
+
+.searchForm__input {
+  inline-size: 70%;
+  block-size: 46px;
+  border-start-start-radius: 24px;
+  border-end-start-radius: 24px;
+}
+.searchForm__btn {
+  inline-size: 30%;
+  block-size: 46px;
+  border-end-end-radius: 24px;
+  border-start-end-radius: 24px;
+}
