@@ -6,19 +6,21 @@ const renderCategories = ({ parentContainer, listResults } = {}) => {
     parentContainer.innerHTML = '';
 
     const categoriesList = [];
+
     listResults.forEach(category => {
-
         const categoryContainer = document.createElement('div');
-        categoryContainer.className = 'category-container';
-
         const categoryTitle = document.createElement('h3');
-        categoryTitle.className = 'category-title';
+        
+        if (parentContainer.classList.contains('categories-list--movie-detail')) {
+            categoryContainer.className = 'category-container category-container--movie-detail';
+            categoryTitle.className = 'category-title category-title--movie-detail';
+        } else {
+            categoryContainer.className = 'category-container';
+            categoryTitle.className = 'category-title';
+        }
+
         categoryTitle.textContent = category.name;
         categoryTitle.id = `id${category.id}`;
-
-        // categoryTitle.addEventListener('click', () => {
-        //     location.hash = `#category=${category.id}-${category.name}`;
-        // });
 
         categoryTitle.setAttribute('data-idcategory', category.id);
         categoryTitle.setAttribute('data-namecategory', category.name);

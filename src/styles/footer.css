@@ -7,7 +7,7 @@
   inline-size: 100%;
   block-size: 100px;
   background-color: var(--color-dark-2);
-  border-block-start: 2px solid var(--color-medium-2);
+  border-block-start: 2px solid var(--color-dark-1);
 }
 
 .footer__title {

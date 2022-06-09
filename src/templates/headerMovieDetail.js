@@ -11,10 +11,8 @@ const headerMovieDetail = () => {
             </figure>
             <div class="detail-container-text">
                 <h1 class="movie-detail__title"></h1>
-                <p class="movieDetail-description"></p>
-
-                <article class="categories-list">
-                </article>
+                <p class="movie-detail__description"></p>
+                <article class="categories-list categories-list--movie-detail"></article>
             </div>
         </article>
     </div>

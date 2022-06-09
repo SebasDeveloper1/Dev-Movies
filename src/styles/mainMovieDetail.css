@@ -1,64 +1,72 @@
-/* .movieDetail-container {
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    padding: 32px 24px;
-    margin-top: 403px;
-    z-index: 1;
-    position: absolute;
-    background-color: var(--color-light-1);
+.movie-detail-container {
+  inline-size: 100%;
+  block-size: auto;
+  background-color: var(--color-dark-2);
+}
+
+.related-movies-container {
+  inline-size: 90%;
+  margin: 0 auto;
+  padding: 16px 0 40px 0;
+}
+
+.related-movies__title {
+  inline-size: 100%;
+  padding: 0 0 8px 0;
+  border-bottom: 2px solid var(--color-medium-3);
+  color: var(--color-light-1);
+}
+
+.related-movies-scroll-container {
+  display: flex;
+  align-items: center;
+  inline-size: 100%;
+  block-size: auto;
+  margin: 0 auto;
+  padding: 32px 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.related-movies-scroll-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.related-movies-scroll-container::-webkit-scrollbar:horizontal {
+  block-size: 10px;
+}
+
+.related-movies-scroll-container::-webkit-scrollbar-track {
+  background-color: var(--color-medium-1);
+  border-radius: 4px;
+}
+
+.related-movies-scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-medium-3);
+  border-radius: 4px;
+}
+
+/* Media Queries for movie list of "movieD" */
+@media (min-width: 768px) {
+  .related-movies-scroll-container .movie-container--dinamic {
+    -webkit-transition: 420ms all;
+    transition: 420ms all;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
   }
-  
-  .movieDetail-title {
-    display: inline-block;
-    width: 80%;
-    margin: 0 0 16px 0;
-    padding: 0;
+
+  .movie-container--dinamic:hover ~ .movie-container--dinamic {
+    -webkit-transform: translate3d(40px, 0, 0);
+    transform: translate3d(40px, 0, 0);
   }
-  
-  .movieDetail-score {
-    display: inline-block;
-    text-align: right;
-    width: 18%;
-    font-weight: var(--font-weight-title2);
+
+  .related-movies-scroll-container:hover .movie-container--dinamic {
+    opacity: 0.8;
   }
-  .movieDetail-score::before {
-    content: "★";
-    color: var(--yellow);
-    padding-right: 4px;
+
+  .related-movies-scroll-container:hover .movie-container--dinamic:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 1;
   }
-  
-  .movieDetail-description {
-    margin: 0 0 24px 0;
-  }
-  
-  .relatedMovies-container {
-    margin-top: 24px;
-    height: 216px;
-  }
-  
-  .relatedMovies-title {
-    margin-bottom: 16px;
-  }
-  
-  .relatedMovies-scrollContainer {
-    position: absolute;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    width: calc(100vw - 24px);
-    padding-bottom: 16px;
-  }
-  
-  .relatedMovies-scrollContainer .movie-container {
-    display: inline-block;
-    margin-right: 8px;
-  }
-  
-  .relatedMovies-scrollContainer .movie-img {
-    width: 125px;
-    min-width: 125px;
-    max-width: 125px;
-    height: 187.5px;
-    min-height: 187.5px;
-    max-height: 187.5px;
-  } */
+}

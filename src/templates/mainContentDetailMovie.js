@@ -1,23 +1,9 @@
 const mainContentDetailMovie = () => {
     const view = /*html*/`
-    <section id="movieDetail" class="movieDetail-container">
-        <article class="movie-detail-info-container">
-            <figure class="detail-container-image">
-                <img class="movie-detail__image"/>
-            </figure>
-            <div class="detail-container-text">
-                <h1 class="movieDetail-title"></h1>
-                <span class="movieDetail-score"></span>
-                <p class="movieDetail-description"></p>
-            </div>
-        </article>
-
-        <article class="categories-list">
-        </article>
-
-        <article class="relatedMovies-container">
-            <h2 class="relatedMovies-title">Películas similares</h2>
-            <div class="relatedMovies-scrollContainer">
+    <section id="movieDetail" class="movie-detail-container">
+        <article class="related-movies-container">
+            <h2 class="related-movies__title">Relacionados</h2>
+            <div class="related-movies-scroll-container">
             </div>
         </article>
     </section>

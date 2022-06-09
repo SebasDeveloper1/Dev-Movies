@@ -16,6 +16,7 @@
 @import url("./mainHome.css");
 
 /* MovieDetail page */
+@import url("./headerMovieDetail.css");
 @import url("./mainMovieDetail.css");
 
 /* Footer styles */

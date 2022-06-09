@@ -87,7 +87,6 @@
 
 .category-title {
   display: inline-block;
-  padding: 4px;
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
@@ -99,14 +98,14 @@
 }
 
 .category-title::before {
-  content: "••••";
+  content: "•";
   color: transparent;
   /* TODO: cambiar color por ID de la categoría */
   background-color: var(--idColor);
-  border-radius: 20px;
+  border-radius: 8px;
   margin-inline-end: 8px;
-  inline-size: 8px;
-  block-size: 8px;
+  inline-size: 4px;
+  block-size: 4px;
 }
 #id28 {
   --idColor: var(--yellow);
@@ -168,23 +167,23 @@
 
 /* Media Queries for movie list of "home" */
 @media (min-width: 768px) {
-  .trendingPreview-movieList .movie-container--home {
+  .trendingPreview-movieList .movie-container--dinamic {
     -webkit-transition: 420ms all;
     transition: 420ms all;
     -webkit-transform-origin: center left;
     transform-origin: center left;
   }
 
-  .movie-container--home:hover ~ .movie-container--home {
+  .movie-container--dinamic:hover ~ .movie-container--dinamic {
     -webkit-transform: translate3d(40px, 0, 0);
     transform: translate3d(40px, 0, 0);
   }
 
-  .trendingPreview-movieList:hover .movie-container--home {
+  .trendingPreview-movieList:hover .movie-container--dinamic {
     opacity: 0.8;
   }
 
-  .trendingPreview-movieList:hover .movie-container--home:hover {
+  .trendingPreview-movieList:hover .movie-container--dinamic:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     opacity: 1;

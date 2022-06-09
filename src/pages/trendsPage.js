@@ -15,7 +15,7 @@ const trendsPage = async () => {
     gobalNodes.mainContent.innerHTML = await genericSection();
     await getTrendingMovies();
 
-    const headerCategoryTitle = document.querySelector('.header-title--categoryView');
+    const headerCategoryTitle = document.querySelector('.header-title--trends');
     headerCategoryTitle.textContent = '🍿 Tendencias';
 
     gobalNodes.footer.innerHTML = await footerMain();

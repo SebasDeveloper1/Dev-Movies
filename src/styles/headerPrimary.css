@@ -2,14 +2,13 @@
 .header-container {
   inline-size: 100%;
   padding: 24px 0;
-  background-image: linear-gradient(
-    to right bottom,
-    #2a0646,
-    #2f084d,
-    #340a55,
-    #390d5c,
-    #3e0f64
-  );
+  background: linear-gradient(
+      180deg,
+      rgb(41, 5, 69, 0.7) 0%,
+      rgb(41, 5, 69) 100%
+    ),
+    url("https://i.postimg.cc/j5gmk05S/back.png");
+
 }
 
 .header__container-main {
@@ -46,7 +45,7 @@
 }
 
 .header__description {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-text1);
   color: var(--color-light-2);
 }

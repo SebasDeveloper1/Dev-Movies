@@ -3,7 +3,7 @@ const headerTrends = () => {
     <div class="header__container-main header__container-main--trends">
     <span class="header-arrow"><i id="headerArrowBtn" class="fa-solid fa-solid fa-arrow-left"></i></span>
         <div class="header-titles">
-            <h1 class="header-title--categoryView"></h1>
+            <h1 class="header-title--trends"></h1>
             <p class="header__description">Millones de películas, programas de televisión y personas por descubrir. Explora ahora!</p>
         </div>
 

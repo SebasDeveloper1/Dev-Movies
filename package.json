@@ -1,6 +1,6 @@
 {
   "name": "dev-Movies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Movie website with REST API",
   "main": "index.js",
   "scripts": {

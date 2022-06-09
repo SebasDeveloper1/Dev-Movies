@@ -5,8 +5,8 @@ const renderMovies = ({ parentContainer, listResults = {} }) => {
     const moviesList = [];
     listResults.forEach(movie => {
         const movieContainer = document.createElement('div');
-        if (parentContainer.classList.contains('trendingPreview-movieList')) {
-            movieContainer.className = 'movie-container movie-container--home';
+        if (parentContainer.classList.contains('trendingPreview-movieList') || parentContainer.classList.contains('related-movies-scroll-container')) {
+            movieContainer.className = 'movie-container movie-container--dinamic';
         } else {
             movieContainer.className = 'movie-container';
         }

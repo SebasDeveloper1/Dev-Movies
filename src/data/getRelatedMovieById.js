@@ -8,9 +8,8 @@ const getRelatedMovieById = async (idMovie) => {
     const { data } = await axiosBaseApi.get(`${API_MOVIE_DETAIL}${idMovie}${API_MOVIE_RECOMENDATIONS}`);
 
     const relatedMovies = data.results;
-
-    const relatedMoviesContainer = document.querySelector('.relatedMovies-scrollContainer');
-
+    
+    const relatedMoviesContainer = document.querySelector('.related-movies-scroll-container');
     renderMovies({ parentContainer: relatedMoviesContainer, listResults: relatedMovies, });
 
 };
