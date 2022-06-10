@@ -15,7 +15,7 @@ const getMoviesBySearch = async (query) => {
 
         const movies = data.results;
 
-        const genericSection = document.querySelector('.genericList-container');
+        const genericSection = document.querySelector('.generic-list-container');
         /* A function that is being called. */
         renderMovies({ parentContainer: genericSection, listResults: movies, });
 

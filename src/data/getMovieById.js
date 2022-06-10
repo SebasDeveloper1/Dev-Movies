@@ -20,7 +20,7 @@ const getMovieById = async (idMovie) => {
     let movieBackdropUrl;
     let backdropPath = movie.backdrop_path;
     if (backdropPath === null) {
-        movieBackdropUrl = 'https://i.postimg.cc/XJN0fqRR/movie-placeholder.png';
+        movieBackdropUrl = '../assets/images/movie-placeholder.png';
     } else {
         movieBackdropUrl = `https://image.tmdb.org/t/p/${widthBackdropMovie}/${movie.backdrop_path}`;
     }
@@ -31,7 +31,7 @@ const getMovieById = async (idMovie) => {
     let moviePosterUrl;
     let posterPath = movie.poster_path;
     if (posterPath === null) {
-        moviePosterUrl = 'https://i.postimg.cc/XJN0fqRR/movie-placeholder.png';
+        moviePosterUrl = '../assets/images/movie-placeholder.png';
     } else {
         moviePosterUrl = `https://image.tmdb.org/t/p/${widthPosterMovie}/${movie.poster_path}`;
     }

@@ -7,13 +7,13 @@
 .related-movies-container {
   inline-size: 90%;
   margin: 0 auto;
-  padding: 16px 0 40px 0;
+  padding: 12px 0 36px 0;
 }
 
 .related-movies__title {
   inline-size: 100%;
-  padding: 0 0 8px 0;
-  border-bottom: 2px solid var(--color-medium-3);
+  padding-block-end: 12px;
+  border-bottom: 1px solid var(--color-medium-3);
   color: var(--color-light-1);
 }
 
@@ -37,7 +37,7 @@
 }
 
 .related-movies-scroll-container::-webkit-scrollbar-track {
-  background-color: var(--color-medium-1);
+  background-color: var(--color-dark-1);
   border-radius: 4px;
 }
 

@@ -4,7 +4,7 @@ const headerMovieDetail = () => {
         <span class="header-arrow"><i id="headerArrowBtn" class="fa-solid fa-solid fa-arrow-left"></i></span>
         <article class="movie-detail-info-container">
             <figure class="detail-container-poster">
-                <img class="movie-detail__poster" src="/" alt="poster movie">
+                <img class="movie-detail__poster" src="/" alt="Poster movie">
                 <div class="score-container">
                 <span class="movie-detail__score"></span>
             </div>

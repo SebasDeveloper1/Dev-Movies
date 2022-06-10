@@ -1,6 +1,6 @@
 const genericSection = () => {
     const view = /*html*/`
-    <section id="genericList" class="genericList-container"></section>
+    <section id="genericList" class="generic-list-container"></section>
     `;
 
     return view;

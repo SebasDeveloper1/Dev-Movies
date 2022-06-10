@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Dotenv = require('dotenv-webpack');
 const ProgressPlugin = require('progress-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -43,6 +44,14 @@ module.exports = {
         }),
         new Dotenv(),
         new ProgressPlugin(true),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, "src", "assets/images"),
+                    to: "assets/images"
+                }
+            ]
+        }),
     ],
     devServer: {
         static:

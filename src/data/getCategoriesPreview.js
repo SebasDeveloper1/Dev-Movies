@@ -11,7 +11,7 @@ const getCategoriesPreview = async () => {
 
         const categories = data.genres;
 
-        const categoriesPreviewList = document.querySelector('.categoriesPreview-list');
+        const categoriesPreviewList = document.querySelector('.categories-preview-list');
 
         renderCategories({ parentContainer: categoriesPreviewList, listResults: categories, });
 

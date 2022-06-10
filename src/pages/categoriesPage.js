@@ -14,7 +14,7 @@ const categoriesPage = async () => {
     const [_, urlInfoCategory] = location.hash.split('=');
     const [categoryId, categoryName] = urlInfoCategory.split('-');
 
-    const headerCategoryTitle = document.querySelector('.header-title--categoryView');
+    const headerCategoryTitle = document.querySelector('.header-title--category-view');
     headerCategoryTitle.textContent = decodeURI(categoryName);// decodificar nombres con espacios
     await getMoviesByCategory(categoryId);
 

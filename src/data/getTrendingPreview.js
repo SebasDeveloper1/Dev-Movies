@@ -12,7 +12,7 @@ const getTrendingMoviesPreview = async () => {
 
         const movies = data.results;
 
-        const trendingPreview = document.querySelector('.trendingPreview-movieList');
+        const trendingPreview = document.querySelector('.trending-preview-movieList');
 
         renderMovies({ parentContainer: trendingPreview, listResults: movies, });
 

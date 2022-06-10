@@ -22,7 +22,7 @@
   flex-wrap: wrap;
   inline-size: 100%;
   block-size: auto;
-  margin-block-start: 40px;
+  margin-block-start: 44px;
 }
 
 .detail-container-poster {
@@ -86,14 +86,11 @@
 
 .movie-detail__title {
   inline-size: 100%;
-  font-size: var(--font-size-lg3);
   margin-block-end: 20px;
   text-align: center;
 }
 
 .movie-detail__description {
-  font-size: var(--font-size-md);
-  color: var(--color-light-2);
   margin-block-end: 12px;
 }
 
@@ -116,7 +113,7 @@
 
 @media (min-width: 768px) {
   .detail-container-text {
-    inline-size: 70%;
+    inline-size: 65%;
   }
 
   .movie-detail__title {

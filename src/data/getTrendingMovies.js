@@ -12,7 +12,7 @@ const getTrendingMovies = async () => {
 
         const movies = data.results;
 
-        const genericSection = document.querySelector('.genericList-container');
+        const genericSection = document.querySelector('.generic-list-container');
 
         renderMovies({ parentContainer: genericSection, listResults: movies, });
 

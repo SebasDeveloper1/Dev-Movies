@@ -5,9 +5,9 @@
   justify-content: space-evenly;
   align-items: center;
   inline-size: 100%;
-  block-size: 100px;
+  block-size: 120px;
   background-color: var(--color-dark-2);
-  border-block-start: 2px solid var(--color-dark-1);
+  border-block-start: 1px solid var(--color-dark-1);
 }
 
 .footer__title {

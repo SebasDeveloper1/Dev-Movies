@@ -10,7 +10,7 @@ const renderCategories = ({ parentContainer, listResults } = {}) => {
     listResults.forEach(category => {
         const categoryContainer = document.createElement('div');
         const categoryTitle = document.createElement('h3');
-        
+
         if (parentContainer.classList.contains('categories-list--movie-detail')) {
             categoryContainer.className = 'category-container category-container--movie-detail';
             categoryTitle.className = 'category-title category-title--movie-detail';
