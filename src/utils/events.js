@@ -29,6 +29,11 @@ const events = () => {
             const nameSelectedMovie = e.composedPath()[1].dataset.namemovie;
             location.hash = `#movie=${idSelectedMovie}-${nameSelectedMovie}`;
 
+        } else if (e.composedPath()[2].classList.contains('movie-container')) {
+            const idSelectedMovie = e.composedPath()[2].dataset.idmovie;
+            const nameSelectedMovie = e.composedPath()[2].dataset.namemovie;
+            location.hash = `#movie=${idSelectedMovie}-${nameSelectedMovie}`;
+
         } else if (e.target.classList.contains('category-title')) {
             const idSelectedCategory = e.target.dataset.idcategory;
             const nameSelectedCategory = e.target.dataset.namecategory;

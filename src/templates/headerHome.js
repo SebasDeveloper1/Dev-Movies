@@ -1,7 +1,7 @@
 const headerHome = () => {
     const view = /*html*/`
     <div class="header__container-main">
-        <a class="header__logo-container" href="./">
+        <a class="header__logo-container" href="#home">
         <img class="header__logo-img" src="https://i.postimg.cc/g0tJtwx6/logo-name.png"
             alt="Logo Sebastian Pedroza">
         </a>

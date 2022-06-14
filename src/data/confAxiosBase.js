@@ -8,7 +8,7 @@ const axiosBaseApi = axios.create({
     headers: { 'Content-Type': 'application/json;charset=utf-8' },
     params: {
         'api_key': API_KEY,
-        'language': 'ES',
+        'language': 'es',
     },
 });
 export default axiosBaseApi;

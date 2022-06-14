@@ -2,14 +2,17 @@
 .header__container-main--search,
 .header__container-main--trends,
 .header__container-main--category {
-  position: relative;
-  grid-template-rows: repeat(2, auto);
+  gap: 16px;
+}
+
+.header__top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  inline-size: 100%;
 }
 
 .header-arrow .fa-arrow-left {
-  position: absolute;
-  top: 0;
-  left: 0;
   padding: 8px 10px;
   border-radius: 50%;
   font-size: var(--font-size-lg2);

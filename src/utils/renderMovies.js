@@ -1,19 +1,11 @@
+import cardMovie from '../templates/cardMovie';
+
 const renderMovies = ({ parentContainer, listResults = {} }) => {
     //clean the content
     parentContainer.innerHTML = '';
 
     const moviesList = [];
     listResults.forEach(movie => {
-        const movieContainer = document.createElement('div');
-        if (parentContainer.classList.contains('trending-preview-movieList') || parentContainer.classList.contains('related-movies-scroll-container')) {
-            movieContainer.className = 'movie-container movie-container--dinamic';
-        } else {
-            movieContainer.className = 'movie-container';
-        }
-
-        const imageMovie = document.createElement('img');
-        imageMovie.className = 'movie-img';
-        imageMovie.setAttribute = ('alt', movie.title);
 
         let posterPathUrl;
         let posterPath = movie.poster_path;
@@ -22,17 +14,25 @@ const renderMovies = ({ parentContainer, listResults = {} }) => {
         } else {
             posterPathUrl = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
         }
-        imageMovie.src = posterPathUrl;
 
-        movieContainer.appendChild(imageMovie);
+        const movieCardView = cardMovie({
+            idMovie: movie.id,
+            urlPosterMovie: posterPathUrl,
+            titleMovie: movie.title,
+            dateMovie: new Date(movie.release_date).getFullYear(),
+        });
 
-        movieContainer.setAttribute('data-idmovie', movie.id);
-        movieContainer.setAttribute('data-namemovie', movie.title);
-
-        moviesList.push(movieContainer);
+        moviesList.push(movieCardView);
     });
+    parentContainer.innerHTML = moviesList.join('');
 
-    parentContainer.append(...moviesList);
+    const movieContainer = document.querySelectorAll('.movie-container');
+    if (parentContainer.classList.contains('trending-preview-movieList') || parentContainer.classList.contains('related-movies-scroll-container')) {
+        movieContainer.forEach(node => {
+            node.classList.add('movie-container--dinamic');
+        });
+    }
+
 };
 
 export default renderMovies;

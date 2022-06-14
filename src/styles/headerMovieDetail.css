@@ -5,12 +5,20 @@
   background-position: top !important;
 }
 
-.header__container-main--movie-details {
-  position: relative;
+.header__container-main--movie-details{
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  place-items: center;
+  gap: 44px;
+  inline-size: 90%;
+  margin: 0 auto;
+}
+
+.movie-detail-main-info {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  inline-size: 90%;
+  inline-size: 100%;
   block-size: 100%;
   margin: 0 auto;
 }
@@ -22,7 +30,6 @@
   flex-wrap: wrap;
   inline-size: 100%;
   block-size: auto;
-  margin-block-start: 44px;
 }
 
 .detail-container-poster {
