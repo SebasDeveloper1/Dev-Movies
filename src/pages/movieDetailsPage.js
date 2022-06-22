@@ -1,5 +1,6 @@
 import gobalNodes from '../utils/globalsNodes';
 import headerMovieDetail from '../templates/headerMovieDetail';
+import movieDetailInfo from '../templates/movieDetailInfo';
 import mainContentDetailMovie from '../templates/mainContentDetailMovie';
 import getMovieById from '../data/getMovieById';
 import footerMain from '../templates/footerMain';
@@ -8,6 +9,9 @@ const movieDetailsPage = async () => {
     // Header
     gobalNodes.header.classList.add('header-container--movie-details');
     gobalNodes.header.innerHTML = await headerMovieDetail();
+    // Info movie details
+    const detailInfoContainer = document.querySelector('.movie-detail-main-info');
+    detailInfoContainer.innerHTML = movieDetailInfo();
 
     gobalNodes.mainContent.innerHTML = await mainContentDetailMovie();
 
