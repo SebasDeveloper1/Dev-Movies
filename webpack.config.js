@@ -8,58 +8,53 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js',
-        clean: true,
-    },
-    mode: 'production',
-    resolve: {
-        extensions: ['.js'],
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                }
-            },
-            {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader,
-                    'css-loader',
-                ]
-            },
-        ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            inject: true,
-            template: './public/index.html',
-            filename: './index.html',
-        }),
-        new MiniCssExtractPlugin({
-            filename: '[name].css',
-        }),
-        new Dotenv(),
-        new ProgressPlugin(true),
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, "src", "assets/images"),
-                    to: "assets/images"
-                }
-            ]
-        }),
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[contenthash].js',
+    clean: true,
+  },
+  mode: 'production',
+  resolve: {
+    extensions: ['.js'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new CssMinimizerPlugin(),
-            new TerserPlugin(),
-        ]
-    }
-}
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './public/index.html',
+      filename: './index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+    new Dotenv(),
+    new ProgressPlugin(true),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src', 'assets/images'),
+          to: 'assets/images',
+        },
+      ],
+    }),
+  ],
+  optimization: {
+    minimize: true,
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+  },
+};

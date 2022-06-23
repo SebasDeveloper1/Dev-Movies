@@ -97,7 +97,7 @@
 }
 
 .category-title::before {
-  content: "•";
+  content: '•';
   color: transparent;
   /* TODO: cambiar color por ID de la categoría */
   background-color: var(--idColor);

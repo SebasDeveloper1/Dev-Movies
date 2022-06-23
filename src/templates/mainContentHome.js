@@ -1,5 +1,5 @@
 const mainContentHome = () => {
-    const view = /*html*/`
+  const view = /* html */ `
     <section id="trendingPreview" class="trending-preview-container">
         <div class="trending-preview-header">
             <h2 class="trending-preview__title">Tendencias</h2>
@@ -15,7 +15,7 @@ const mainContentHome = () => {
     </section>
     `;
 
-    return view;
+  return view;
 };
 
 export default mainContentHome;

@@ -1,12 +1,16 @@
 const $ = (selector) => document.querySelector(selector);
 
-//Gobal Nodes
+// Gobal Nodes
+const bodyContainer = null || $('#bodyContainer');
+
 const header = null || $('#header');
 
 const mainContent = null || $('#mainContent');
 
 const footer = null || $('#footer');
 
-const gobalNodes = { header, footer, mainContent, };
+const modal = null || $('#modal');
 
-export default gobalNodes;
+const globalNodes = { bodyContainer, header, mainContent, footer, modal };
+
+export default globalNodes;

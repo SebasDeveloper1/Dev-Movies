@@ -5,7 +5,7 @@
   background-position: top !important;
 }
 
-.header__container-main--movie-details{
+.header__container-main--movie-details {
   display: grid;
   grid-template-rows: repeat(2, auto);
   place-items: center;
@@ -21,109 +21,4 @@
   inline-size: 100%;
   block-size: 100%;
   margin: 0 auto;
-}
-
-.movie-detail-info-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  inline-size: 100%;
-  block-size: auto;
-}
-
-.detail-container-poster {
-  position: relative;
-  inline-size: 20%;
-  min-inline-size: 170px;
-  max-inline-size: 250px;
-  block-size: auto;
-  margin-block-end: 12px;
-  border-radius: 12px;
-}
-
-.movie-detail__poster {
-  inline-size: 100%;
-  block-size: 100%;
-  border-radius: 12px;
-  -webkit-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%);
-  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 50%);
-}
-
-.score-container {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translate(50%, -50%);
-  display: grid;
-  place-items: center;
-  inline-size: 50px;
-  block-size: 50px;
-  border-radius: 50%;
-  background-color: var(--color-medium-3);
-}
-
-.score-container:before {
-  content: "";
-  position: absolute;
-  inline-size: 80%;
-  block-size: 80%;
-  border-radius: 50%;
-  background-color: var(--color-light-1);
-}
-
-.movie-detail__score {
-  position: relative;
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-title2);
-  color: var(--color-medium-3);
-  border-radius: 50%;
-}
-
-.movie-detail__score::after {
-  content: "%";
-  font-size: var(--font-size-sm);
-}
-
-.detail-container-text {
-  align-self: flex-start;
-  inline-size: 100%;
-  color: var(--color-light-1);
-}
-
-.movie-detail__title {
-  inline-size: 100%;
-  margin-block-end: 20px;
-  text-align: center;
-}
-
-.movie-detail__description {
-  margin-block-end: 12px;
-}
-
-.detail-container-text .categories-list--movie-detail {
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-}
-
-.categories-list--movie-detail .category-container--movie-detail {
-  inline-size: auto;
-  margin-block-end: 0;
-  margin-inline-end: 12px;
-}
-
-.category-container--movie-detail .category-title--movie-detail {
-  font-weight: var(--font-weight-text1);
-  font-size: var(--font-size-md);
-}
-
-@media (min-width: 768px) {
-  .detail-container-text {
-    inline-size: 65%;
-  }
-
-  .movie-detail__title {
-    text-align: start;
-  }
 }

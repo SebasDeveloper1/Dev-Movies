@@ -1,5 +1,5 @@
 const cardMovie = ({ idMovie, urlPosterMovie, titleMovie, dateMovie }) => {
-    const view =  /*html*/`
+  const view = /* html */ `
         <div class="movie-container" data-idmovie="${idMovie}" data-namemovie="${titleMovie}">
             <img class="movie-img" src="${urlPosterMovie}"/>
             <div class="info-movie-container">
@@ -8,7 +8,7 @@ const cardMovie = ({ idMovie, urlPosterMovie, titleMovie, dateMovie }) => {
             </div>
         </div>
     `;
-    return view;
-}
+  return view;
+};
 
 export default cardMovie;

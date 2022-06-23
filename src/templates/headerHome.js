@@ -1,5 +1,5 @@
 const headerHome = () => {
-    const view = /*html*/`
+  const view = /* html */ `
     <div class="header__container-main">
         <a class="header__logo-container" href="#home">
         <img class="header__logo-img" src="https://i.postimg.cc/g0tJtwx6/logo-name.png"
@@ -17,7 +17,7 @@ const headerHome = () => {
         </form>
     </div>
     `;
-    return view;
+  return view;
 };
 
 export default headerHome;

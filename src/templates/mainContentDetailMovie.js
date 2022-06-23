@@ -1,5 +1,5 @@
 const mainContentDetailMovie = () => {
-    const view = /*html*/`
+  const view = /* html */ `
     <section id="movieDetail" class="movie-detail-container">
         <article class="related-movies-container">
             <h2 class="related-movies__title">Relacionados</h2>
@@ -8,7 +8,7 @@ const mainContentDetailMovie = () => {
     </section>
     `;
 
-    return view;
+  return view;
 };
 
 export default mainContentDetailMovie;

@@ -1,5 +1,5 @@
 const headerTrends = () => {
-    const view = /*html*/`
+  const view = /* html */ `
     <div class="header__container-main header__container-main--trends">
         <div class="header__top-container">
             <span class="header-arrow"><i id="headerArrowBtn" class="fa-solid fa-solid fa-arrow-left"></i></span>
@@ -19,7 +19,7 @@ const headerTrends = () => {
         </form>
     </div>
     `;
-    return view;
-}
+  return view;
+};
 
 export default headerTrends;

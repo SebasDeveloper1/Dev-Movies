@@ -1,23 +1,25 @@
-@import url("./globals.css");
+@import url('./globals.css');
 
 /* Styles headers primary */
-@import url("./headerPrimary.css");
+@import url('./headerPrimary.css');
 
 /* Styles headers secondary */
-@import url("./headersSecondary.css");
+@import url('./headersSecondary.css');
 
 /* Generic movie list styles */
-@import url("./genericList.css");
+@import url('./genericList.css');
 
 /* Styles cardMovie */
-@import url("./cardMovie.css");
+@import url('./cardMovie.css');
 
 /* Home page */
-@import url("./mainHome.css");
+@import url('./mainHome.css');
 
 /* MovieDetail page */
-@import url("./headerMovieDetail.css");
-@import url("./mainMovieDetail.css");
+@import url('./headerMovieDetail.css');
+@import url('./movieDetailInfo.css');
+@import url('./mainMovieDetail.css');
+@import url('./modalVideo.css');
 
 /* Footer styles */
-@import url("./footer.css");
+@import url('./footer.css');

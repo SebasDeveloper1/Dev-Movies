@@ -1,9 +1,9 @@
 const genericSection = () => {
-    const view = /*html*/`
+  const view = /* html */ `
     <section id="genericList" class="generic-list-container"></section>
     `;
 
-    return view;
-}
+  return view;
+};
 
 export default genericSection;
