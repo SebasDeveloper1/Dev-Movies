@@ -32,8 +32,8 @@
   transform: translate(50%, -50%);
   display: grid;
   place-items: center;
-  inline-size: 50px;
-  block-size: 50px;
+  inline-size: 55px;
+  block-size: 55px;
   border-radius: 50%;
   background-color: var(--color-medium-3);
 }

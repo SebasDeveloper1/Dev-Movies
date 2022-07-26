@@ -45,7 +45,7 @@ const getMovieById = async (idMovie) => {
   const movieDetailTitle = document.querySelector('.movie-detail__title');
   movieDetailTitle.textContent = movie.title;
 
-  const finalScore = movie.vote_average * 10;
+  const finalScore = (movie.vote_average * 10).toFixed(1);
   const progressBarScore = document.querySelector('.score-container');
   progressBarScore.style.background = `conic-gradient(
         #5c218a ${finalScore * 3.6}deg, 
