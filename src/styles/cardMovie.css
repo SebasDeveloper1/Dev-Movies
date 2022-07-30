@@ -1,11 +1,25 @@
+.movie-container--loading {
+  position: relative;
+  inline-size: 150px;
+  min-inline-size: 170px;
+  max-inline-size: 250px;
+  block-size: auto;
+  min-block-size: 220px;
+  max-block-size: 250px;
+  margin-inline-end: 20px;
+  border-radius: 12px;
+  background-size: 400% 400%;
+  animation: loadingAnimation 3s ease-in-out infinite;
+}
+
 .movie-container {
   position: relative;
-  height: auto;
-  min-height: 220px;
-  max-height: 250px;
-  width: 150px;
-  min-width: 170px;
-  max-width: 250px;
+  inline-size: 150px;
+  min-inline-size: 170px;
+  max-inline-size: 250px;
+  block-size: auto;
+  min-block-size: 220px;
+  max-block-size: 250px;
   margin-inline-end: 20px;
   border-radius: 12px;
   cursor: pointer;
@@ -50,4 +64,14 @@
   font-size: var(--font-size-md);
   color: var(--color-medium-2);
   font-weight: var(--font-weight-title2);
+}
+
+/*keyframes*/
+@keyframes loadingAnimation {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }

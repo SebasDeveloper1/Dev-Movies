@@ -62,6 +62,9 @@
   max-block-size: 360px;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
+  background-image: url('../assets/images/backgroundHeader.svg');
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 @media (min-width: 428px) {

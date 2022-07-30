@@ -10,7 +10,11 @@ const renderModalVideo = async (idMovie) => {
     `${API_MOVIE_DETAIL}${idMovie}${API_MOVIE_VIDEO}`
   );
 
-  const watchTrailerBtn = document.querySelector('.movie-detail__Trailer-btn');
+  const watchTrailerBtn = document.querySelector('.movie-detail__trailer-btn');
+
+  if (videos.results.length > 0) {
+    watchTrailerBtn.classList.remove('movie-detail__trailer-btn--none');
+  }
   watchTrailerBtn.addEventListener('click', () => {
     globalNodes.modal.innerHTML = modalVideo(videos.results[0].key);
 

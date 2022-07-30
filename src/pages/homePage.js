@@ -14,6 +14,7 @@ const homePage = async () => {
 
   globalNodes.mainContent.innerHTML = await mainContentHome();
   await getTrendingMoviesPreview();
+
   await getCategoriesPreview();
 
   globalNodes.footer.innerHTML = await footerMain();

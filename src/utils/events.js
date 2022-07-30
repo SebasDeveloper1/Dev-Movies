@@ -1,5 +1,7 @@
 import globalNodes from './globalsNodes';
 
+export const pathActual = [];
+
 const events = () => {
   globalNodes.bodyContainer.addEventListener('click', (e) => {
     switch (e.target.id) {
@@ -14,6 +16,7 @@ const events = () => {
         }
         break;
       case 'trendingPreviewBtn':
+        pathActual[0] = location.hash;
         location.hash = '#trends';
         break;
       case 'headerArrowBtn':

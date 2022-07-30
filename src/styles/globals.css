@@ -129,8 +129,24 @@ button:hover {
 .header-container,
 .main-container,
 .footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   inline-size: 100%;
   margin: 0 auto;
+}
+
+.loading-dark {
+  background: linear-gradient(90deg, rgb(41, 5, 69, 0.1), rgb(41, 5, 69, 0.5));
+}
+
+.loading-light {
+  background: linear-gradient(
+    90deg,
+    rgb(170, 131, 200, 0.1),
+    rgb(170, 131, 200, 0.5)
+  );
 }
 
 @media (min-width: 428px) {

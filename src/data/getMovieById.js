@@ -1,4 +1,5 @@
 import axiosBaseApi from './confAxiosBase';
+import movieDetailInfo from '../templates/movieDetailInfo';
 import getRelatedMovieById from './getRelatedMovieById';
 import convertMinutesToHours from '../utils/convertMinutesToHours';
 import renderCategories from '../utils/renderCategories';
@@ -10,6 +11,10 @@ const getMovieById = async (idMovie) => {
   const { data: movie } = await axiosBaseApi.get(
     `${API_MOVIE_DETAIL}${idMovie}`
   );
+
+  const detailInfoContainer = document.querySelector('.movie-detail-main-info');
+  detailInfoContainer.innerHTML = '';
+  detailInfoContainer.innerHTML = movieDetailInfo();
 
   let widthBackdropMovie;
   let widthPosterMovie;
@@ -23,18 +28,18 @@ const getMovieById = async (idMovie) => {
 
   let movieBackdropUrl;
   const backdropPath = movie.backdrop_path;
-  if (backdropPath === null) {
+  if (!backdropPath) {
     movieBackdropUrl = '../assets/images/movie-placeholder.png';
   } else {
     movieBackdropUrl = `https://image.tmdb.org/t/p/${widthBackdropMovie}/${movie.backdrop_path}`;
   }
   const headerSection = document.getElementById('header');
   headerSection.style.background = `
-    linear-gradient(180deg, rgb(41, 5, 69, 0.7) 0%, rgb(41, 5, 69) 100%),url(${movieBackdropUrl})`;
+      linear-gradient(180deg, rgb(41, 5, 69, 0.7) 0%, rgb(41, 5, 69) 100%),url(${movieBackdropUrl})`;
 
   let moviePosterUrl;
   const posterPath = movie.poster_path;
-  if (posterPath === null) {
+  if (!posterPath) {
     moviePosterUrl = '../assets/images/movie-placeholder.png';
   } else {
     moviePosterUrl = `https://image.tmdb.org/t/p/${widthPosterMovie}/${movie.poster_path}`;
@@ -48,8 +53,8 @@ const getMovieById = async (idMovie) => {
   const finalScore = (movie.vote_average * 10).toFixed(1);
   const progressBarScore = document.querySelector('.score-container');
   progressBarScore.style.background = `conic-gradient(
-        #5c218a ${finalScore * 3.6}deg, 
-        #aa83c8 ${finalScore * 3.6}deg)`;
+          #5c218a ${finalScore * 3.6}deg, 
+          #aa83c8 ${finalScore * 3.6}deg)`;
   const movieDetailScore = document.querySelector('.movie-detail__score');
   movieDetailScore.textContent = `${finalScore}`;
 
@@ -71,7 +76,6 @@ const getMovieById = async (idMovie) => {
   });
 
   renderModalVideo(idMovie);
-
   getRelatedMovieById(idMovie);
 };
 

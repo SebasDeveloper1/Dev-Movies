@@ -3,11 +3,12 @@ import renderMovies from '../utils/renderMovies';
 
 const { API_SEARCH } = process.env;
 
-const getMoviesBySearch = async (query) => {
+const getMoviesBySearch = async (query, numPage) => {
   try {
     const { data } = await axiosBaseApi.get(API_SEARCH, {
       params: {
         query,
+        page: numPage,
       },
     });
     // const res = await fetch(`${API_URL}${API_TRENDING}?api_key=${API_KEY}`);
@@ -17,7 +18,11 @@ const getMoviesBySearch = async (query) => {
 
     const genericSection = document.querySelector('.generic-list-container');
     /* A function that is being called. */
-    renderMovies({ parentContainer: genericSection, listResults: movies });
+    renderMovies({
+      parentContainer: genericSection,
+      listResults: movies,
+      numPage,
+    });
   } catch (error) {
     console.log(`This is an error => ${error}`);
   }

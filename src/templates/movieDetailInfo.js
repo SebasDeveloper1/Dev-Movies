@@ -2,7 +2,7 @@ const movieDetailInfo = () => {
   const view = /* html */ `
         <article class="movie-detail-info-container">
             <figure class="detail-container-poster">
-                <img class="movie-detail__poster" src="/" alt="Poster movie">
+                <img class="movie-detail__poster" src="../assets/images/movie-placeholder.png" alt="Poster movie">
                 <div class="score-container">
                 <span class="movie-detail__score"></span>
             </div>
@@ -15,7 +15,7 @@ const movieDetailInfo = () => {
                 </div>
                 <p class="movie-detail__description"></p>
                 <article class="categories-list categories-list--movie-detail"></article>
-                <button id="watchTrailerBtn" type="button" class="movie-detail__Trailer-btn">Ver trailer</button>
+                <button id="watchTrailerBtn" type="button" class="movie-detail__trailer-btn movie-detail__trailer-btn--none">Ver trailer</button>
             </div>
         </article>
     `;

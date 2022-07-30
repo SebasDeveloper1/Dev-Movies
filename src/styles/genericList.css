@@ -6,3 +6,11 @@
   width: 90%;
   margin: 36px auto;
 }
+
+.load-more-movies-btn {
+  inline-size: 90%;
+  max-inline-size: 400px;
+  block-size: auto;
+  margin-block-end: 36px;
+  border-radius: 24px;
+}

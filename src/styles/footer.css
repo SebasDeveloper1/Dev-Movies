@@ -6,6 +6,7 @@
   align-items: center;
   inline-size: 100%;
   block-size: 120px;
+  text-align: center;
   background-color: var(--color-dark-2);
   border-block-start: 1px solid var(--color-dark-1);
 }

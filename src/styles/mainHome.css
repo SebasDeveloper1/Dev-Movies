@@ -78,6 +78,16 @@
   margin: 0 auto;
 }
 
+.category-container--loading {
+  inline-size: 40%;
+  max-inline-size: 200px;
+  block-size: 30px;
+  margin-block-end: 20px;
+  border-radius: 12px;
+  background-size: 400% 400%;
+  animation: loadingAnimation 3s ease-in-out infinite;
+}
+
 .category-container {
   inline-size: 40%;
   max-inline-size: 200px;

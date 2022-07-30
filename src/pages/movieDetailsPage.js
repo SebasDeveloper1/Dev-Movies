@@ -1,6 +1,6 @@
 import globalNodes from '../utils/globalsNodes';
 import headerMovieDetail from '../templates/headerMovieDetail';
-import movieDetailInfo from '../templates/movieDetailInfo';
+import movieDetailInfoLoading from '../templates/movieDetailInfoLoading';
 import mainContentDetailMovie from '../templates/mainContentDetailMovie';
 import getMovieById from '../data/getMovieById';
 import footerMain from '../templates/footerMain';
@@ -11,7 +11,7 @@ const movieDetailsPage = async () => {
   globalNodes.header.innerHTML = await headerMovieDetail();
   // Info movie details
   const detailInfoContainer = document.querySelector('.movie-detail-main-info');
-  detailInfoContainer.innerHTML = movieDetailInfo();
+  detailInfoContainer.innerHTML = movieDetailInfoLoading();
 
   globalNodes.mainContent.innerHTML = await mainContentDetailMovie();
 

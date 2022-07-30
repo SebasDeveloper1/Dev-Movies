@@ -3,7 +3,6 @@
 const renderCategories = ({ parentContainer, listResults } = {}) => {
   // clean the content
   parentContainer.innerHTML = '';
-
   const categoriesList = [];
 
   listResults.forEach((category) => {
