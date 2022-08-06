@@ -16,9 +16,6 @@ const homePage = async () => {
   globalNodes.mainContent.innerHTML = await mainContentHome();
   await getTrendingMoviesPreview();
 
-  if (!localStorage.getItem('LIKED_MOVIES')) {
-    localStorage.setItem('LIKED_MOVIES', '[]');
-  }
   await getFavoritesMoviesPreview({ page: 'home' });
 
   await getCategoriesPreview();
