@@ -37,6 +37,30 @@
   border-radius: inherit;
 }
 
+.movie-add-favorites-btn {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  z-index: 1;
+}
+
+.movie-add-favorites-btn .fa-heart {
+  padding: 12px;
+  border-radius: 50%;
+  font-size: var(--font-size-lg);
+  color: var(--color-light-1);
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, top 0.15s ease-in-out,
+    left 0.15s ease-in-out;
+}
+
+.movie-add-favorites-btn .fa-heart--active {
+  color: var(--color-dark-2);
+  background-color: var(--color-light-1);
+  box-shadow: 0px 0px 10px 2px var(--color-dark-1);
+}
+
 .info-movie-container {
   position: absolute;
   top: 0;
@@ -66,9 +90,18 @@
   font-weight: var(--font-weight-title2);
 }
 
+@media (min-width: 768px) {
+  .movie-add-favorites-btn .fa-heart:hover {
+    color: var(--color-dark-2);
+    background-color: var(--color-light-1);
+    box-shadow: 0px 0px 10px 2px var(--color-dark-1);
+  }
+}
+
 /*keyframes*/
 @keyframes loadingAnimation {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {

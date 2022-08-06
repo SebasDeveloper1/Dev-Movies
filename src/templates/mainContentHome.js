@@ -17,6 +17,23 @@ const mainContentHome = () => {
         </article>
     </section>
 
+    <section id="favoritesPreview" class="favorites-preview-container">
+      <div class="favorites-preview-header">
+          <h2 class="favorites-preview__title">Favoritas</h2>
+          <button id="favoritesPreviewBtn" type="button" class="favorites-preview__btn">Ver más</button>
+      </div>
+
+      <article class="favorites-preview-movieList">
+        <div class="movie-container--loading loading-dark"></div>
+        <div class="movie-container--loading loading-dark"></div>
+        <div class="movie-container--loading loading-dark"></div>
+        <div class="movie-container--loading loading-dark"></div>
+        <div class="movie-container--loading loading-dark"></div>
+        <div class="movie-container--loading loading-dark"></div>
+        <div class="movie-container--loading loading-dark"></div>
+      </article>
+    </section>
+
     <section id="categoriesPreview" class="categories-preview-container">
         <h2 class="categories-preview__title">Categorías</h2>
         <article class="categories-preview-list">

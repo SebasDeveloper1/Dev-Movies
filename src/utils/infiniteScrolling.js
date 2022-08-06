@@ -1,8 +1,12 @@
-import getTrendingMovies from '../data/getTrendingPreview';
-
 const infiniteScrolling = () => {
   const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
-  return scrollTop + clientHeight >= scrollHeight - 20;
+  let scrollValue;
+  if (window.screen.width <= 768) {
+    scrollValue = scrollTop + clientHeight >= scrollHeight - 100;
+  } else {
+    scrollValue = scrollTop + clientHeight >= scrollHeight - 15;
+  }
+  return scrollValue;
 };
 
 export default infiniteScrolling;

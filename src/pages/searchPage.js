@@ -20,9 +20,10 @@ const searchPage = async () => {
 
   // ['#search=', 'busqueda']
   const [_, query] = location.hash.split('=');
+  console.log(query);
   const headerCategoryTitle = document.querySelector('.header-title--search');
   headerCategoryTitle.textContent = `Resultados para: "${decodeURI(query)}"`; // decodificar nombres con espacios
-  await getMoviesBySearch(query, 1);
+  await getMoviesBySearch(decodeURI(query), 1);
 
   globalNodes.footer.innerHTML = await footerMain();
 

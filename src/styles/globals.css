@@ -149,6 +149,10 @@ button:hover {
   );
 }
 
+.visibility-none {
+  display: none;
+}
+
 @media (min-width: 428px) {
   h1 {
     font-size: var(--font-size-xl);

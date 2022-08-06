@@ -1,6 +1,7 @@
 /* This file contains the styles for the headings for the Categories, Search, MovieDetails, and Trend Preview views. */
 .header__container-main--search,
 .header__container-main--trends,
+.header__container-main--favorites,
 .header__container-main--category {
   gap: 16px;
 }
@@ -30,6 +31,7 @@
 
 .header-title--search,
 .header-title--trends,
+.header-title--favorites,
 .header-title--category-view {
   color: var(--color-light-1);
 }

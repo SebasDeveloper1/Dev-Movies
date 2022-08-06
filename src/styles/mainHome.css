@@ -1,12 +1,14 @@
 /* Main  home */
 /* Main TrendingSection */
-.trending-preview-container {
+.trending-preview-container,
+.favorites-preview-container {
   inline-size: 100%;
   padding: 36px 0;
   background-color: var(--color-light-2);
 }
 
-.trending-preview-header {
+.trending-preview-header,
+.favorites-preview-header {
   inline-size: 90%;
   display: flex;
   justify-content: space-between;
@@ -16,17 +18,20 @@
   border-bottom: 1px solid var(--color-medium-3);
 }
 
-.trending-preview__title {
+.trending-preview__title,
+.favorites-preview__title {
   color: var(--color-dark-2);
 }
 
-.trending-preview__btn {
+.trending-preview__btn,
+.favorites-preview__btn {
   inline-size: auto;
   block-size: auto;
   border-radius: 24px;
 }
 
-.trending-preview-movieList {
+.trending-preview-movieList,
+.favorites-preview-movieList {
   display: flex;
   align-items: center;
   inline-size: 90%;
@@ -36,20 +41,24 @@
   overflow-y: hidden;
 }
 
-.trending-preview-movieList::-webkit-scrollbar {
+.trending-preview-movieList::-webkit-scrollbar,
+.favorites-preview-movieList::-webkit-scrollbar {
   -webkit-appearance: none;
 }
 
-.trending-preview-movieList::-webkit-scrollbar:horizontal {
+.trending-preview-movieList::-webkit-scrollbar:horizontal,
+.favorites-preview-movieList::-webkit-scrollbar:horizontal {
   block-size: 10px;
 }
 
-.trending-preview-movieList::-webkit-scrollbar-track {
+.trending-preview-movieList::-webkit-scrollbar-track,
+.favorites-preview-movieList::-webkit-scrollbar-track {
   background-color: var(--color-light-2);
   border-radius: 4px;
 }
 
-.trending-preview-movieList::-webkit-scrollbar-thumb {
+.trending-preview-movieList::-webkit-scrollbar-thumb,
+.favorites-preview-movieList::-webkit-scrollbar-thumb {
   background-color: var(--color-dark-1);
   border-radius: 4px;
 }
@@ -176,7 +185,8 @@
 
 /* Media Queries for movie list of "home" */
 @media (min-width: 768px) {
-  .trending-preview-movieList .movie-container--dinamic {
+  .trending-preview-movieList .movie-container--dinamic,
+  .favorites-preview-movieList .movie-container--dinamic {
     -webkit-transition: 420ms all;
     transition: 420ms all;
     -webkit-transform-origin: center left;
@@ -188,11 +198,13 @@
     transform: translate3d(40px, 0, 0);
   }
 
-  .trending-preview-movieList:hover .movie-container--dinamic {
+  .trending-preview-movieList:hover .movie-container--dinamic,
+  .favorites-preview-movieList:hover .movie-container--dinamic {
     opacity: 0.8;
   }
 
-  .trending-preview-movieList:hover .movie-container--dinamic:hover {
+  .trending-preview-movieList:hover .movie-container--dinamic:hover,
+  .favorites-preview-movieList:hover .movie-container--dinamic:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
     opacity: 1;

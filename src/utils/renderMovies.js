@@ -2,6 +2,9 @@ import lazyLoading from './lazyLoading';
 
 const renderMovies = ({ parentContainer, listResults = {}, numPage = 1 }) => {
   // clean the content
+  let likedMoviesList = [];
+  likedMoviesList = JSON.parse(localStorage.getItem('LIKED_MOVIES'));
+
   if (numPage === 1) {
     parentContainer.innerHTML = '';
   }
@@ -26,6 +29,14 @@ const renderMovies = ({ parentContainer, listResults = {}, numPage = 1 }) => {
     movieImg.setAttribute('src', '../assets/images/movie-placeholder.png');
     movieImg.setAttribute('alt', movie.title);
 
+    const addFavoritesBtn = document.createElement('span');
+    addFavoritesBtn.setAttribute('class', 'movie-add-favorites-btn');
+
+    const addFavoritesIconBtn = document.createElement('i');
+    addFavoritesIconBtn.setAttribute('id', 'addFavoritesBtn');
+    addFavoritesIconBtn.setAttribute('class', 'fa-solid fa-heart');
+    addFavoritesIconBtn.setAttribute('title', 'Agregar a favoritos');
+
     const infoMovieContainer = document.createElement('div');
     infoMovieContainer.setAttribute('class', 'info-movie-container');
 
@@ -37,10 +48,19 @@ const renderMovies = ({ parentContainer, listResults = {}, numPage = 1 }) => {
     infoMovieDate.setAttribute('class', 'info-movie__date');
     infoMovieDate.textContent = new Date(movie.release_date).getFullYear();
 
+    likedMoviesList.forEach((item) => {
+      if (Number(item) === movie.id) {
+        addFavoritesIconBtn.classList.toggle('fa-heart--active');
+        addFavoritesIconBtn.setAttribute('title', 'Quitar de favoritos');
+      }
+    });
+
     infoMovieContainer.appendChild(infoMovieTitle);
     infoMovieContainer.appendChild(infoMovieDate);
+    addFavoritesBtn.appendChild(addFavoritesIconBtn);
 
     movieContainer.appendChild(movieImg);
+    movieContainer.appendChild(addFavoritesBtn);
     movieContainer.appendChild(infoMovieContainer);
 
     parentContainer.appendChild(movieContainer);
@@ -50,6 +70,7 @@ const renderMovies = ({ parentContainer, listResults = {}, numPage = 1 }) => {
   const movieContainer = document.querySelectorAll('.movie-container');
   if (
     parentContainer.classList.contains('trending-preview-movieList') ||
+    parentContainer.classList.contains('favorites-preview-movieList') ||
     parentContainer.classList.contains('related-movies-scroll-container')
   ) {
     movieContainer.forEach((node) => {
