@@ -12,17 +12,18 @@ let numPage = 1;
 const searchPage = async () => {
   globalNodes.header.classList.remove('header-container--movie-details');
   globalNodes.header.style.background = '';
-  globalNodes.header.innerHTML = await headerSearch();
+
+  // ['#search=', 'busqueda']
+  const [_, query] = location.hash.split('=');
+
+  globalNodes.header.innerHTML = await headerSearch({
+    searchValue: decodeURI(query),
+  });
 
   await eventEnterInput();
 
   globalNodes.mainContent.innerHTML = await genericSection();
 
-  // ['#search=', 'busqueda']
-  const [_, query] = location.hash.split('=');
-  console.log(query);
-  const headerCategoryTitle = document.querySelector('.header-title--search');
-  headerCategoryTitle.textContent = `Resultados para: "${decodeURI(query)}"`; // decodificar nombres con espacios
   await getMoviesBySearch(decodeURI(query), 1);
 
   globalNodes.footer.innerHTML = await footerMain();

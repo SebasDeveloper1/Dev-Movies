@@ -1,4 +1,7 @@
+import internationalityTexts from './internationalityTexts';
 import lazyLoading from './lazyLoading';
+
+const { buttonTexts } = internationalityTexts();
 
 const renderMovies = ({ parentContainer, listResults = {}, numPage = 1 }) => {
   // clean the content
@@ -35,7 +38,7 @@ const renderMovies = ({ parentContainer, listResults = {}, numPage = 1 }) => {
     const addFavoritesIconBtn = document.createElement('i');
     addFavoritesIconBtn.setAttribute('id', 'addFavoritesBtn');
     addFavoritesIconBtn.setAttribute('class', 'fa-solid fa-heart');
-    addFavoritesIconBtn.setAttribute('title', 'Agregar a favoritos');
+    addFavoritesIconBtn.setAttribute('title', buttonTexts.addToFavoritesBtn);
 
     const infoMovieContainer = document.createElement('div');
     infoMovieContainer.setAttribute('class', 'info-movie-container');
@@ -51,7 +54,10 @@ const renderMovies = ({ parentContainer, listResults = {}, numPage = 1 }) => {
     likedMoviesList.forEach((item) => {
       if (Number(item) === movie.id) {
         addFavoritesIconBtn.classList.toggle('fa-heart--active');
-        addFavoritesIconBtn.setAttribute('title', 'Quitar de favoritos');
+        addFavoritesIconBtn.setAttribute(
+          'title',
+          buttonTexts.removeFromFavoritesBtn
+        );
       }
     });
 

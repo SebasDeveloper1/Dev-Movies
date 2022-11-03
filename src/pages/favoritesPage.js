@@ -11,11 +11,6 @@ const favoritesPage = async () => {
   globalNodes.header.innerHTML = await headerFavorites();
   await eventEnterInput();
 
-  const headerTitleFavorites = document.querySelector(
-    '.header-title--favorites'
-  );
-  headerTitleFavorites.textContent = 'Favoritas';
-
   globalNodes.mainContent.innerHTML = await genericSection();
 
   await getFavoritesMoviesPreview({ page: 'favorites' });

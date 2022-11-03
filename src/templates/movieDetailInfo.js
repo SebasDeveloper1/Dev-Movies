@@ -1,3 +1,7 @@
+import internationalityTexts from '../utils/internationalityTexts';
+
+const { buttonTexts } = internationalityTexts();
+
 const movieDetailInfo = () => {
   const view = /* html */ `
         <article class="movie-detail-info-container">
@@ -15,7 +19,7 @@ const movieDetailInfo = () => {
                 </div>
                 <p class="movie-detail__description"></p>
                 <article class="categories-list categories-list--movie-detail"></article>
-                <button id="watchTrailerBtn" type="button" class="movie-detail__trailer-btn movie-detail__trailer-btn--none">Ver trailer</button>
+                <button id="watchTrailerBtn" type="button" class="movie-detail__trailer-btn movie-detail__trailer-btn--none">${buttonTexts.playTrailerBtn}</button>
             </div>
         </article>
     `;

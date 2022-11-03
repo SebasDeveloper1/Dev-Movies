@@ -15,9 +15,6 @@ const trendsPage = async () => {
   globalNodes.header.innerHTML = await headerTrends();
   await eventEnterInput();
 
-  const headerTitleTrends = document.querySelector('.header-title--trends');
-  headerTitleTrends.textContent = 'Tendencias';
-
   globalNodes.mainContent.innerHTML = await genericSection();
 
   await getTrendingMovies(1);
