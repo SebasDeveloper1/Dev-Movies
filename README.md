@@ -1,5 +1,7 @@
 # 🎬 Dev-Movies
 
+🎬 A website that will allow you to explore and enjoy the best of the world of cinema from the comfort of your home and through any mobile or desktop device.
+
 Workshop of the Practical Course on REST API Consumption with JavaScript at [Platzi](https://platzi.com "Platzi"). 💚💻
 
   <p align="center">
